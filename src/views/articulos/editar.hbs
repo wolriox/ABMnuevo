@@ -1,0 +1,29 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/articulos/editar/{{articulo.id}}" method="POST">
+                    <div class="form-group">
+                        <input type="text" value="{{articulo.id}}" class="form-control" name="id" placeholder="Código" disabled>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" value="{{articulo.nombre}}" class="form-control" name="nombre" placeholder="Nombre del artículo" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" value="{{articulo.grupo}}" class="form-control" name="grupo" placeholder="Grupo de artículos">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" value="{{articulo.año}}" class="form-control" name="año" placeholder="Año">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success btn-block">
+                            Guardar
+                        </button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
