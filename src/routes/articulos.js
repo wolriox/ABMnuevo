@@ -16,6 +16,7 @@ router.post('/add', async (req, res) => {
         año
     };
     await pool.query('INSERT INTO articulos set ?', [newItem]);
+    req.flash('success', 'Artículo guardado exitosamente.');
     res.redirect('/articulos');
 });
 
@@ -28,6 +29,7 @@ router.get('/', async (req, res) => {
 router.get('/eliminar/:id', async (req, res) => {
     const {id} = req.params;
     await pool.query('DELETE FROM articulos WHERE ID = ?', [id]);
+    req.flash('success', 'Artículo eliminado exitosamente.');
     res.redirect('/articulos');
 });
 
@@ -47,6 +49,7 @@ router.post('/editar/:id', async (req, res) =>{
     };
     console.log(newArticulo);
     await pool.query('UPDATE articulos SET ? WHERE id = ?', [newArticulo, id]);
+    req.flash('success', 'Artículo actualizado exitosamente.');
     res.redirect('/articulos');
 });
 
