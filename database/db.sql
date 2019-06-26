@@ -4,21 +4,18 @@ USE db_stock;
 
 CREATE TABLE articulos(
     id VARCHAR(6) NOT NULL,
-    nombre VARCHAR(16) NOT NULL,
+    nombre VARCHAR(20) NOT NULL,
     grupo VARCHAR(2),
-    año VARCHAR(4),
-    color VARCHAR(10) NOT NULL,
-    talle VARCHAR(3) NOT NULL,
-    cantidad INT,   
+    año VARCHAR(4)
 );
 
 ALTER TABLE articulos
 ADD PRIMARY KEY (id);
 
 CREATE TABLE usuarios(
-    id VARCHAR(2) NOT NULL,
-    nombre VARCHAR(16) NOT NULL,
-    contraseña VARCHAR(16) NOT NULL
+    idUsuario VARCHAR(2) NOT NULL,
+    nombreUsuario VARCHAR(20) NOT NULL,
+    password VARCHAR(60) NOT NULL
 );
 
 ALTER TABLE usuarios
