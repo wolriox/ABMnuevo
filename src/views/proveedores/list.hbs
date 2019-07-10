@@ -7,29 +7,27 @@
                 <thead>
                     <tr>
                         <th scope="col">Código</th>
-                        <th scope="col">Descripción</th>
-                        <th scope="col">Grupo</th>
-                        <th scope="col">Año</th>
-                        <th scope="col">Proveedor</th>
+                        <th scope="col">Nombre/Empresa</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Teléfono</th>
                         <th scope="col">
                             <div class="container" align="right">
-                            <a href="/articulos/add" class="btn btn-outline-success">
+                            <a href="/proveedores/add" class="btn btn-outline-success">
                             <i class="fa fa-plus"></i>
                             </a></div>
                         </th>
                     </tr>
                 </thead>
-                {{#each articulos}}
+                {{#each proveedores}}
                 <tbody>
                 <tr>
-                    <td>{{id}}</td>
-                    <td>{{nombre}}</td>
-                    <td> {{grupo}} </td>
-                    <td> {{año}} </td>
-                    <td> {{idProveedor}} </td>
+                    <td>{{idProveedor}}</td>
+                    <td>{{nombreProveedor}}</td>
+                    <td> {{pDireccion}} </td>
+                    <td> {{pTelefono}} </td>
                     <td align="right">
-                        <a href="/articulos/eliminar/{{id}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-                        <a href="/articulos/editar/{{id}}" class="btn btn-info btn-sm"><i class="fa fa-pencil"></i></a>        
+                        <a href="/proveedores/eliminar/{{idProveedor}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                        <a href="/proveedores/editar/{{idProveedor}}" class="btn btn-info btn-sm"><i class="fa fa-pencil"></i></a>        
                     </td>
                 </tr>
                 </tbody>
@@ -37,8 +35,8 @@
         {{else}}
             <div class="col-md-4 mx-auto">
                 <div class="card card-body text-center">
-                    <p>No hay artículos cargados.</p>
-                    <a href="/articulos/add">Crear artículo</a>
+                    <p>No hay proveedores cargados.</p>
+                    <a href="/proveedores/add">Crear proveedor</a>
                 </div>
             </div>
         {{/each}}

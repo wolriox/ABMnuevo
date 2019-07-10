@@ -9,12 +9,13 @@ router.get('/add', isLoggedIn, (req, res) => {
 });
 
 router.post('/add', isLoggedIn, async (req, res) => {
-    const { id, nombre, grupo, año } = req.body;
+    const { id, nombre, grupo, año, idProveedor } = req.body;
     const newItem = {
         id,
         nombre,
         grupo,
-        año
+        año,
+        idProveedor
     };
     await pool.query('INSERT INTO articulos set ?', [newItem]);
     req.flash('success', 'Artículo guardado exitosamente.');
@@ -42,11 +43,12 @@ router.get('/editar/:id', isLoggedIn, async (req, res) => {
 
 router.post('/editar/:id', isLoggedIn, async (req, res) =>{
     const {id} = req.params;
-    const {nombre, grupo, año} = req.body;
+    const {nombre, grupo, año, idProveedor} = req.body;
     const newArticulo = {
         nombre,
         grupo,
-        año
+        año,
+        idProveedor
     };
     await pool.query('UPDATE articulos SET ? WHERE id = ?', [newArticulo, id]);
     req.flash('success', 'Artículo actualizado exitosamente.');
